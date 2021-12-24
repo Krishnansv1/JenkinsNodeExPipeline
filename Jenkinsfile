@@ -12,7 +12,8 @@ node{
         }
     }
     stage('docker/build/push'){
-        docker.withRegistry('https://inde.docker.io/v1/','dockerhub')
-        def app = docker.build("krishnansv/jenkins-NodeExpipelie:${commit_id}".'.').push
+        docker.withRegistry('https://index.docker.io/v1/','dockerhub'){
+        def app = docker.build("krishnansv/jenkins-NodeExpipelie:${commit_id}".'.').push()
+        }
     }
 }
