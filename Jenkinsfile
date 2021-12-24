@@ -18,6 +18,6 @@ node{
         //sh 'docker push krishnansv/jenkinsnodeexpipeline'
         def app = docker.build('krishnansv/jenkinsnodeexpipeline:${commit_id}','.')
         app.push()
-        }
+        //}
     }
 }
