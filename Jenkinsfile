@@ -12,7 +12,7 @@ node{
         }
     }
     stage('docker /build/push'){
-        docker.withRegistry('https://hub.docker.com/','dockerhub'){
+        docker.withRegistry('https://index.docker.io/v1/','dockerhub'){
         
         def app = docker.build("krishnansv/jenkinsnodeexpipeline:${commit_id}",'.')
         app.push()
