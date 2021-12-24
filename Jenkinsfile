@@ -7,8 +7,8 @@ node{
     }
     stage('test'){
         nodejs(nodejsInstallationName,'nodejs')
-        sh npm install --only=dev
-        sh npm test
+        sh 'npm install --only=dev'
+        sh 'npm test'
     }
     stage('docker/build/push'){
         docker.withRegistry('https://inde.docker.io/v1/','dockerhub')
