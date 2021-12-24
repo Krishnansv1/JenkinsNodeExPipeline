@@ -11,7 +11,7 @@ node{
         sh 'npm test'
         }
     }
-    stage('docker/build/push'){
+    stage('docker /build/push'){
         docker.withRegistry('https://index.docker.io/v1/','dockerhub'){
         def app = docker.build("krishnansv/jenkins-NodeExpipelie:${commit_id}".'.').push()
         }
