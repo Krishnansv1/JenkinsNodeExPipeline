@@ -6,9 +6,10 @@ node{
         commit_id = readFile('.git/commit_id').trim()
     }
     stage('test'){
-        nodejs(nodeJSInstallationName:'nodejs')
+        nodejs(nodeJSInstallationName:'nodejs'){
         sh 'npm install --only=dev'
         sh 'npm test'
+        }
     }
     stage('docker/build/push'){
         docker.withRegistry('https://inde.docker.io/v1/','dockerhub')
