@@ -14,7 +14,8 @@ node{
     stage('docker /build/push'){
         //docker.withRegistry('https://index.docker.io/v1/','dockerhub'){
         sh 'docker login -u krishnansv -p krishnan12'
-        def app = docker.build("krishnansv/jenkins-NodeExpipelie:${commit_id}".'.').push()
+        def app = docker.build("krishnansv/jenkins-NodeExpipelie:${commit_id}".'.')
+        app.push()
         //}
     }
 }
