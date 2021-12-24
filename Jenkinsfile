@@ -16,8 +16,8 @@ node{
         //sh 'docker login -u krishnansv -p krishnan12'
         //sh 'docker build -t krishnansv/jenkinsnodeexpipeline .'
         //sh 'docker push krishnansv/jenkinsnodeexpipeline'
-        def app = docker.build('krishnansv/jenkinsnodeexpipeline:${commit_id}','.')
-        app.push()
+        //def app = docker.build('krishnansv/jenkinsnodeexpipeline:${commit_id}','.')
+        //app.push()
         }
     }
 }
